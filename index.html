@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!--<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=device-width,height=device-height,target-densitydpi=device-dpi,user-scalable=yes" />-->
+    <meta name="description" content="Сервис для поиска смайликов эмодзи (emoji)"/>
+    <meta name="Keywords" content="поиск эмодзи эмоджи emoji emodzi найти смайлы для iphone айфон"/>
+    <meta name="robots" content="all"/>
+    <meta name="yandex" content="all"/>
+    <meta name="yandex-verification" content="7ede60c55eee0dae" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Поиск эмодзи!</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.16/clipboard.min.js"></script>
+    <script src="script.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+
+    <div class="wrapper">
+        <h1 class="hidden-header">Поиск эмодзи! 😜😂💜</h1>
+        <p class="hidden-header">Сервис для поиска и копирования смайликов эмодзи (emoji), которые можно вставить в другое приложение</p>
+
+        <input id="search-box"
+               class="search-box"
+               type="text"
+               autocorrect="off"
+               autocapitalize="none"
+               autocomplete="off"
+               placeholder="Поиск эмодзи"
+        />
+
+        <div id="emoji-list"
+             class="emoji-list">
+
+        </div>
+
+        <div id="get-random" class="get-random" style="display: none">
+            <p>Ничего не найдено</p>
+            <a  href="javascript:void(0)"><br>
+                <img src="rnd.png" width="100px" alt="найти случайные эмоджи (магия)" /><br>
+                случайные эмодзи
+            </a>
+        </div>
+
+        <div class="ad-iframe">
+            <iframe scrolling="no" style="bottom: 10px;position: absolute;border: 0;width: 300px;height: 250px;"
+                    src="//coinurl.com/get.php?id=60229&SSL=1"></iframe>
+
+        </div>
+
+
+
+    </div>
+
+    <h2 id="copied" class="copied" style="display: none;">Скопировано</h2>
+
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter42094344 = new Ya.Metrika({
+                    id:42094344,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/42094344" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

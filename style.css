@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    background: url('bg.gif');
+
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+
+}
+
+.wrapper {
+    max-width: 800px;
+    margin: 0px auto 0;
+
+    background: white;
+    overflow: hidden;
+
+    box-shadow: 0 0 80px #b5b5b5;
+    padding: 30px 20px 300px 20px;
+
+    position: relative;
+
+}
+
+@media all and (min-width: 700px) {
+    .wrapper {
+        margin: 24px auto;
+    }
+}
+
+.emoji-list {
+    overflow: auto;
+    margin-left: -10px;
+    min-height: 120px;
+}
+
+.emoji-list > div {
+    float: left;
+    text-align: center;
+    font-size: 32px;
+
+    /* background: #50f;*/
+    /*margin: 2px;*/
+}
+
+.emoji-list .btn {
+    position: relative;
+}
+
+.emoji-list .btn input {
+    position: absolute;
+    left: -9999999px;
+
+    font-size: 16px;
+    background: #eee;
+}
+
+.emoji-list .btn input:focus {
+    font-size: 16px;
+
+}
+
+.search-box {
+    font-size: 2em;
+    width: 100%;
+    color: #666;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #bbb;
+}
+
+.e-bg {
+    background: white;
+
+    min-height: 48px;
+    min-width: 48px;
+
+    padding: 4px;
+
+    box-shadow: inset 0 0 10px #bbb;
+    border-radius: 8px;
+    margin: 10px 0 0 10px;
+
+    cursor: pointer;
+
+}
+
+.e-bg:hover,
+.e-bg:active {
+    background: #eee;
+}
+
+.hidden-header {
+    display: none;
+}
+
+.get-random {
+    text-align: center;
+    position: absolute;
+    width: 95%;
+}
+
+.get-random p {
+    margin-bottom: 12px;
+    font-size: 22px;
+}
+
+.get-random a {
+    color: green;
+}
+
+.copied {
+    color: green;
+    font-size: 43px;
+    font-weight: normal;
+    text-shadow: #04ff00 0 0 10px;
+}
+
+.ad-iframe {
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden
+}
