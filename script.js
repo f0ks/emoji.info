@@ -43,7 +43,7 @@
 
             concat_JSON = [].concat.apply([], [
                 actual_JSON.people
-                //, actual_JSON.flags
+                , actual_JSON.flags
                 , actual_JSON.food
                 , actual_JSON.nature
                 , actual_JSON.objects
