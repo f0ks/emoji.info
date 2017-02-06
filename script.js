@@ -2,6 +2,11 @@
 
     'use strict';
 
+    if (location.protocol != 'https:')
+    {
+        location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+    }
+
     var actual_JSON, concat_JSON = [];
     var searchBox;
     var emojiListContainer;
