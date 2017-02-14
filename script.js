@@ -2,8 +2,7 @@
 
     'use strict';
 
-    if (location.protocol != 'https:')
-    {
+    if (location.protocol != 'https:') {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
 
@@ -11,15 +10,12 @@
     var searchBox;
     var emojiListContainer;
 
-
     function loadJSON(fileName, callback) {
-
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
         xobj.open('GET', fileName, true);
         xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
-                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
                 callback(xobj.responseText);
             }
         };
@@ -34,26 +30,18 @@
         searchBox = document.getElementById('search-box');
         emojiListContainer = document.getElementById('emoji-list');
         searchBox.focus();
-        //fixHeight();
-
 
         loadJSON('emoji-light.json', function (response) {
-            // Parse JSON string into object
             actual_JSON = JSON.parse(response);
-            /*            actual_JSON.forEach(function (entry) {
-             //console.log(entry.emoji);
-             emojiListContainer.innerHTML += entry.emoji;
-             });*/
 
-
-            concat_JSON = [].concat.apply([], [
-                actual_JSON.people
-                , actual_JSON.flags
-                , actual_JSON.food
-                , actual_JSON.nature
-                , actual_JSON.objects
-                , actual_JSON.symbols
-                , actual_JSON.travel]);
+            concat_JSON = [].concat.apply([],
+                [actual_JSON.people,
+                    actual_JSON.flags,
+                    actual_JSON.food,
+                    actual_JSON.nature,
+                    actual_JSON.objects,
+                    actual_JSON.symbols,
+                    actual_JSON.travel]);
 
             if (getUrlParam().q) {
                 searchEmoji(getUrlParam().q);
@@ -63,18 +51,10 @@
                 filterBadEmojies();
             }
 
-
         });
-
 
         searchBox.addEventListener('input', function (event) {
             searchEmoji(this.value);
-
-
-        });
-
-        $(window).resize(function () {
-            //fixHeight();
         });
 
         $('#get-random a').click(function () {
@@ -83,20 +63,8 @@
             $('#get-random').hide();
         });
 
-
     }
 
-
-    function fixHeight() {
-        var factor = 110;
-        if ($(window).width() < 800) factor = 70;
-        $('.wrapper').css('height', $(window).height() - factor - 300);
-        $('#get-random').css('top', $('.wrapper').height() / 2);
-        $('#emoji-list').css('height', $(window).height() - factor - 30 - 300);
-        if ($('#emoji-list').height() < 100) {
-            $('#emoji-list').height(100);
-        }
-    }
 
     function getRandomEmojies() {
         if (window.history) {
@@ -156,8 +124,6 @@
             $('#get-random').hide();
             $('.wrapper').removeClass('h200');
             $('.ad-iframe').show();
-
-
         }
 
         filterBadEmojies();
@@ -178,21 +144,16 @@
     }
 
     function getUrlParam() {
-        // This function is anonymous, is executed immediately and
-        // the return value is assigned to QueryString!
         var query_string = {};
         var query = window.location.search.substring(1);
-        var vars = query.split("&");
+        var vars = query.split('&');
         for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
-            // If first entry with this name
-            if (typeof query_string[pair[0]] === "undefined") {
+            var pair = vars[i].split('=');
+            if (typeof query_string[pair[0]] === 'undefined') {
                 query_string[pair[0]] = decodeURIComponent(pair[1]);
-                // If second entry with this name
-            } else if (typeof query_string[pair[0]] === "string") {
+            } else if (typeof query_string[pair[0]] === 'string') {
                 var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
                 query_string[pair[0]] = arr;
-                // If third or later entry with this name
             } else {
                 query_string[pair[0]].push(decodeURIComponent(pair[1]));
             }
@@ -208,10 +169,10 @@
 })();
 
 jQuery.fn.center = function () {
-    this.css("position", "absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
-            $(window).scrollTop()) + "px");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
-            $(window).scrollLeft()) + "px");
+    this.css('position', 'absolute');
+    this.css('top', Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+            $(window).scrollTop()) + 'px');
+    this.css('left', Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+            $(window).scrollLeft()) + 'px');
     return this;
 };
