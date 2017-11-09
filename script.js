@@ -2,7 +2,7 @@
 
     'use strict';
 
-    if (location.protocol != 'https:') {
+    if (location.protocol !== 'https:' && !window.location.href.match(/localhost/i)) {
         location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
     }
 
@@ -15,7 +15,7 @@
         xobj.overrideMimeType("application/json");
         xobj.open('GET', fileName, true);
         xobj.onreadystatechange = function () {
-            if (xobj.readyState == 4 && xobj.status == "200") {
+            if (xobj.readyState === 4 && xobj.status === 200) {
                 callback(xobj.responseText);
             }
         };
@@ -171,8 +171,8 @@
 jQuery.fn.center = function () {
     this.css('position', 'absolute');
     this.css('top', Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
-            $(window).scrollTop()) + 'px');
+        $(window).scrollTop()) + 'px');
     this.css('left', Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
-            $(window).scrollLeft()) + 'px');
+        $(window).scrollLeft()) + 'px');
     return this;
 };
